@@ -6,6 +6,12 @@
 
 # YOUR CODE HERE
 
+def f1(*args):
+
+    x,y = args
+
+    return x+y
+
 print(f1(1, 2))
 
 # Write a function f2 that takes any number of integer arguments and returns the
@@ -13,6 +19,21 @@ print(f1(1, 2))
 # Note: Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
+
+def f2(*args):
+
+    result = 0
+    for i in args:
+        if type(i) == int:
+            result += i
+        elif type(i) == list:
+            for j in i:
+                result +=j
+
+        else:
+            result = 'error'
+
+    return result
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
@@ -31,19 +52,41 @@ print(f2(a))    # Should print 22
 
 # YOUR CODE HERE
 
+def f3(a,b=0):
+
+    if b == 0:
+        return a+1
+
+    else:
+        return a+b
+
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
 
 
 # Write a function f4 that accepts an arbitrary number of keyword arguments and
 # prints out the keys and values like so:
-#
+
 # key: foo, value: bar
 # key: baz, value: 12
-#
+
 # Note: Google "python keyword arguments".
 
 # YOUR CODE HERE
+
+def f4(*args,**kwargs):
+
+    if args:
+        for arg in args:
+            if type(arg) == dict:
+                for key, value in arg.items():
+                    print('key:', key, ', value:', value)
+
+    if kwargs:
+        for key, value in kwargs.items():
+            print('key:', key, ', value:', value)
+
+
 
 # Should print
 # key: a, value: 12
