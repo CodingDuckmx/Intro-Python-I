@@ -74,13 +74,7 @@ print(f3(8))     # Should print 9
 
 # YOUR CODE HERE
 
-def f4(*args,**kwargs):
-
-    if args:
-        for arg in args:
-            if type(arg) == dict:
-                for key, value in arg.items():
-                    print('key:', key, ', value:', value)
+def f4(**kwargs):
 
     if kwargs:
         for key, value in kwargs.items():
@@ -105,4 +99,4 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-f4(d)
+f4(**d)
