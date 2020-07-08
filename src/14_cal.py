@@ -29,4 +29,49 @@ it should use today’s date to get the month and year.
 
 import sys
 import calendar
-from datetime import datetime
+from datetime import date
+
+year = date.today().year
+month = date.today().month
+
+args_len = len(sys.argv)
+
+if args_len == 1:
+
+  print(calendar.month(year,month))
+
+else:
+
+  try:
+
+
+    if args_len == 2:
+
+      if len(sys.argv[1]) < 4:
+        month = int('0' + str(sys.argv[1][1]))
+
+      else:
+        month = int(sys.argv[1][1:3])
+
+      print(calendar.month(year,month))
+
+    elif args_len == 3:
+
+      if len(sys.argv[1]) < 4:
+        month = int('0' + str(sys.argv[1][1]))
+
+      else:
+        month = int(sys.argv[1][1:3])
+      
+      year = int(sys.argv[2][1:5])
+
+      print(calendar.month(year,month))
+
+    else:
+
+      print('The correct format is script_name.py [month_numner] [year_number]')
+
+  except:
+
+    print('The correct format is script_name.py [month_numner] [year_number]')
+
