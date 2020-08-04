@@ -8,15 +8,25 @@ def is_even(x):
     Returns true if the inserted value is an even number.
     '''
 
-    if type(x) == int:
+    ## Old code
+
+    # if type(x) == int:
         
-        if x % 2 == 0:
+    #     if x % 2 == 0:
 
-            return True
+    #         return True
     
-    else:
+    # else:
 
-        return False
+    #     return False
+
+    ## New code
+
+    if type(x) == int and x % 2 == 0:
+        
+        return True
+    
+    return False
 
 
 # Read a number from the keyboard

@@ -21,7 +21,21 @@ print(a[-2])
 print(a[-3:])
 
 # Output the two middle elements in the array: [1, 7]
-print(a[2:4:1])
+
+## Old code
+# print(a[2:4:1])
+
+## New code
+
+def output_middle(lst):
+
+    if len(lst) % 2 == 0:
+        return lst[int(len(lst)/2)-1:int(len(lst)/2)+1]
+
+    if len(lst) % 2 == 0:
+        return lst[int(len(lst)/2)]
+
+print(output_middle(a))        
 
 # Output every element except the first one: [4, 1, 7, 9, 6]
 print(a[1:])
