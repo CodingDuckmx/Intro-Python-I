@@ -47,14 +47,26 @@ print(waypoints)
 
 # YOUR CODE HERE
 
-for i in range(len(waypoints)):
+## Old code
+
+# for i in range(len(waypoints)):
     
-    if waypoints[i]['name'] == 'a place':
-        waypoints[i]['lon'] = -130
-        waypoints[i]['name'] = 'not a real place'
-        break
-    else:
-        pass
+#     if waypoints[i]['name'] == 'a place':
+#         waypoints[i]['lon'] = -130
+#         waypoints[i]['name'] = 'not a real place'
+#         break
+#     else:
+#         pass
+
+## New code
+
+i = 0
+
+while waypoints[i]['name'] != 'a place':
+    i += 1
+
+waypoints[i]['lon'] = -130
+waypoints[i]['name'] = 'not a real place'
 
 print(waypoints)
 
