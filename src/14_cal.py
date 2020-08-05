@@ -31,10 +31,63 @@ import sys
 import calendar
 from datetime import date
 
+## Old Code
+
+# year = date.today().year
+# month = date.today().month
+
+# args_len = len(sys.argv)
+
+# # If no args were given.
+
+# if args_len == 1:
+
+#   print(calendar.month(year,month))
+
+# else:
+
+#   try:
+
+#     # If two arg were given.
+
+#     if args_len == 2:
+
+#       if len(sys.argv[1]) < 3:
+#         month = int('0' + str(sys.argv[1][1]))
+
+#       else:
+#         month = int(sys.argv[1][1:3])
+
+#       print(calendar.month(year,month))
+
+#     elif args_len == 3:
+
+#       if len(sys.argv[1]) < 4:
+#         month = int('0' + str(sys.argv[1][1]))
+
+#       else:
+#         month = int(sys.argv[1][1:3])
+      
+#       year = int(sys.argv[2][1:5])
+
+#       print(calendar.month(year,month))
+
+#     else:
+
+#       print('The correct format is script_name.py [month_number] [year_number]')
+
+#   except:
+
+#     print('The correct format is script_name.py [month_number] [year_number]')
+
+## New Code
+
 year = date.today().year
 month = date.today().month
 
 args_len = len(sys.argv)
+
+# If no args were given.
 
 if args_len == 1:
 
@@ -44,34 +97,29 @@ else:
 
   try:
 
+    # If two arg were given.
 
     if args_len == 2:
 
-      if len(sys.argv[1]) < 4:
-        month = int('0' + str(sys.argv[1][1]))
-
-      else:
-        month = int(sys.argv[1][1:3])
+      month = int(sys.argv[1])
 
       print(calendar.month(year,month))
 
     elif args_len == 3:
 
-      if len(sys.argv[1]) < 4:
-        month = int('0' + str(sys.argv[1][1]))
-
-      else:
-        month = int(sys.argv[1][1:3])
+      month = int(sys.argv[1])
       
-      year = int(sys.argv[2][1:5])
+      year = int(sys.argv[2][0:5])
 
+      if len(sys.argv[2]) < 4:
+        print(f'Notice your getting {sys.argv[2]} AD, otherwise enter the full year.')
       print(calendar.month(year,month))
 
     else:
 
-      print('The correct format is script_name.py [month_numner] [year_number]')
+      print('The correct format is script_name.py [month_number] [year_number]')
 
   except:
 
-    print('The correct format is script_name.py [month_numner] [year_number]')
+    print('The correct format is script_name.py [month_number] [year_number]')
 
