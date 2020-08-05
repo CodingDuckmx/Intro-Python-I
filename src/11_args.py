@@ -22,6 +22,10 @@ print(f1(1, 2))
 
 def f2(*args):
 
+    ''' Sums all the given arguments. The args could be integers,
+        list of integers or a combination of both.
+    '''
+
     result = 0
     for i in args:
         if type(i) == int:
@@ -34,6 +38,7 @@ def f2(*args):
             result = 'error'
 
     return result
+
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
@@ -54,11 +59,16 @@ print(f2(*a))    # Should print 22
 
 def f3(a,b=0):
 
+    ''' If just an argument is passed, return the argument summed by 1.
+        Else, return the sum of both arguments.
+    '''
+
     if b == 0:
         return a+1
 
     else:
         return a+b
+
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -74,13 +84,22 @@ print(f3(8))     # Should print 9
 
 # YOUR CODE HERE
 
+## Old code
+
+# def f4(**kwargs):
+
+#     if kwargs:
+#         for key, value in kwargs.items():
+#                 print('key:', key, ', value:', value)
+
+## New code
+
 def f4(**kwargs):
 
-    if kwargs:
-        for key, value in kwargs.items():
+    '''Prints the key and value of each keyword argument.'''
+
+    for key, value in kwargs.items():
             print('key:', key, ', value:', value)
-
-
 
 # Should print
 # key: a, value: 12
